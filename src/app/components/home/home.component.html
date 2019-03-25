@@ -1,0 +1,32 @@
+<div class="page-container">
+
+    <!-- <div class="video-container"> -->
+    <video #video id="video" width="320" height="240" autoplay></video>
+    <!-- </div> -->
+    <!-- <canvas #canvas id="canvas" width="320" height="240"></canvas> -->
+    <app-status-bar [currentWorkPercent]="currentWorkPercent()" (click)="notify()"></app-status-bar>
+    <div class="settings-button-container">
+        <img src="assets/icons/settings.png" (click)="isSettingsOpened = !isSettingsOpened">
+    </div>
+    <app-status-info [hidden]="isSettingsOpened" [poseScore]="pose?.score" [currentWorkPercent]="currentWorkPercent()"
+        [currentExtraWorkTimeCounter]="currentExtraWorkTimeCounter" [isOnAir]="isOnAir">
+    </app-status-info>
+    <app-settings [hidden]="!isSettingsOpened" [workTimeNorm]="workTimeNorm" [restTimeNorm]="restTimeNorm"
+        [currentWorkTime]="currentWorkTimeCounter" [currentExtraWorkTime]="currentExtraWorkTimeCounter"
+        (settingsUpdate)="onSettingsUpdate($event)">
+    </app-settings>
+    <!-- <div class="info {{pose && pose?.score > 0.1 ? 'info__detected' : 'info__no-detection'}}">
+        <h2 class="detection-status">
+            {{pose && pose?.score > 0.1 ?
+                'User detected' :
+                'No user detected' }}
+        </h2>
+        <p class="message">
+                {{'infoMessage'}}
+        </p>
+    </div>
+    
+    <p>Mana: {{workTimeNorm - currentWorkTimeCounter}} / norm {{workTimeNorm}} / curr {{ currentWorkTimeCounter}}</p>
+    <p>{{currentWorkTimeCounter / (workTimeNorm / 100)}}%</p> -->
+    <!-- <h3>{{currentExtraWorkTimeCounter}}</h3> -->
+</div>

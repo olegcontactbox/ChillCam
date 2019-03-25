@@ -1,0 +1,39 @@
+<div class="settings">
+    <h2 class="header">Settings</h2>
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="inputs">
+            <label>
+                <span>Work time</span>
+                <input type="number" formControlName="workTimeNorm">
+            </label>
+            <label>
+                <span>Chill time</span>
+                <input type="number" formControlName="restTimeNorm">
+            </label>
+            <label>
+                <span>Current</span>
+                <input type="number" formControlName="currentWorkTime" (focus)="isCurrentWorkInFocus = true" (blur)="isCurrentWorkInFocus = false">
+            </label>
+            <label>
+                <span>Extra</span>
+                <input type="number" formControlName="currentExtraWorkTime" (focus)="isCurrentExtraInFocus = true" (blur)="isCurrentExtraInFocus = false">
+            </label>
+        </div>
+        <div class="divider"></div>
+        <button type="submit">Save</button>
+        <button type="button" (click)="onReset()">Reset</button>
+    </form>
+</div>
+<!-- <div class="settings">
+    <h2 class="header">Settings</h2>
+    <div class="inputs">
+        <label>
+            <span>Work time</span>
+            <input>
+        </label>
+        <label>
+            <span>Chill time</span>
+            <input>
+        </label>
+    </div>
+</div> -->

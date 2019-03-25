@@ -1,0 +1,39 @@
+@import "~styles/colors";
+
+
+.info {
+    // border: 1px solid $black;
+    border-radius: 18px;
+    background: $blue;
+    width: 320px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & .detection-status {
+        text-transform: uppercase;
+        margin: 8px 0 0;
+
+    }
+    & .message {
+        font-size: 22px;
+        color: $white;
+        margin: 4px 0 0;
+    }
+    & .extra-time {
+        font-size: 20px;
+        color: $white;
+        margin: 4px 0 0;
+    }
+    &__detected{
+        & .detection-status {
+        color: $green;
+        }
+    }
+    &__no-detection{
+        & .detection-status {
+        color: $red;
+        }
+    }
+    
+}

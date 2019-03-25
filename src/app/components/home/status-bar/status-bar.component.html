@@ -1,0 +1,7 @@
+<div [style.width]="barWidth + 'px'" class="status-bar">
+    <div [style.width]="markWidth + 'px'" class="mark"></div>
+    <p class="percent">
+        {{maxPercent - currentWorkPercent | number:'0.1-1'}}
+        <span class="percent-icon">%</span>
+    </p>
+</div>
