@@ -1,5 +1,8 @@
 <div class="settings">
     <!-- <h2 class="header">Settings</h2> -->
+    <div class="info-icon">
+        <p (click)="onInfoClick()">i</p>
+    </div>
     <h2 *ngIf="!poseScore" class="detection-status detection-status_loading">Loading...</h2>
     <h2 *ngIf="poseScore"
         class="detection-status {{poseScore && poseScore > 0.1 ? 'detection-status_detected' : 'detection-status_no-detection'}}">

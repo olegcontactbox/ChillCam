@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
+const { shell } = require('electron');
+
 
 @Component({
     selector: 'app-settings',
@@ -62,6 +64,9 @@ export class SettingsComponent implements OnInit, OnChanges {
             currentExtraWorkTime: 0,
         });
         this.onSubmit();
+    }
+    onInfoClick(): void {
+        shell.openExternal('https://github.com/olegcontactbox/chillometer/blob/master/README.md');
     }
 
 }
