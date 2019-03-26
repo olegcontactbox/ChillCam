@@ -1,39 +1,44 @@
 <div class="settings">
-    <h2 class="header">Settings</h2>
+    <!-- <h2 class="header">Settings</h2> -->
+    <h2 *ngIf="!poseScore" class="detection-status detection-status_loading">Loading...</h2>
+    <h2 *ngIf="poseScore"
+        class="detection-status {{poseScore && poseScore > 0.1 ? 'detection-status_detected' : 'detection-status_no-detection'}}">
+        {{
+                poseScore && poseScore > 0.1 ?
+                    'User detected' :
+                    'No user detected' 
+            }}
+    </h2>
     <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="inputs">
-            <label>
-                <span>Work time</span>
-                <input type="number" formControlName="workTimeNorm">
-            </label>
-            <label>
-                <span>Chill time</span>
-                <input type="number" formControlName="restTimeNorm">
-            </label>
-            <label>
-                <span>Current</span>
-                <input type="number" formControlName="currentWorkTime" (focus)="isCurrentWorkInFocus = true" (blur)="isCurrentWorkInFocus = false">
-            </label>
-            <label>
-                <span>Extra</span>
-                <input type="number" formControlName="currentExtraWorkTime" (focus)="isCurrentExtraInFocus = true" (blur)="isCurrentExtraInFocus = false">
-            </label>
+            <div class="inputs__row">
+                <label>
+                    <span>Work time</span>
+                    <input type="number" formControlName="workTimeNorm">
+                </label>
+                <label>
+                    <span>Chill time</span>
+                    <input type="number" formControlName="restTimeNorm">
+                </label>
+            </div>
+            <div class="inputs__row">
+                <label>
+                    <span>Current</span>
+                    <input type="number" formControlName="currentWorkTime" (focus)="isCurrentWorkInFocus = true"
+                        (blur)="isCurrentWorkInFocus = false">
+                </label>
+                <label>
+                    <span>Extra chill</span>
+                    <input type="number" formControlName="currentExtraWorkTime" (focus)="isCurrentExtraInFocus = true"
+                        (blur)="isCurrentExtraInFocus = false">
+                </label>
+            </div>
         </div>
-        <div class="divider"></div>
-        <button type="submit">Save</button>
-        <button type="button" (click)="onReset()">Reset</button>
+        <!-- <div class="divider"></div> -->
+        <div class="buttons">
+
+            <button type="submit">Save</button>
+            <button type="button" (click)="onReset()">Reset</button>
+        </div>
     </form>
 </div>
-<!-- <div class="settings">
-    <h2 class="header">Settings</h2>
-    <div class="inputs">
-        <label>
-            <span>Work time</span>
-            <input>
-        </label>
-        <label>
-            <span>Chill time</span>
-            <input>
-        </label>
-    </div>
-</div> -->

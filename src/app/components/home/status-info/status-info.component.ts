@@ -25,7 +25,6 @@ export class StatusInfoComponent implements OnInit, OnChanges {
     }
     ngOnChanges(): void {
         this.statusText = this.currentWorkPercent === 100 ? `Work time is over. Let's chill!` : `Let's work`;
-
     }
 
 }

@@ -5,13 +5,17 @@
     <!-- </div> -->
     <!-- <canvas #canvas id="canvas" width="320" height="240"></canvas> -->
     <app-status-bar [currentWorkPercent]="currentWorkPercent()" (click)="notify()"></app-status-bar>
-    <div class="settings-button-container">
+    <!-- <div class="settings-button-container">
         <img src="assets/icons/settings.png" (click)="isSettingsOpened = !isSettingsOpened">
-    </div>
-    <app-status-info [hidden]="isSettingsOpened" [poseScore]="pose?.score" [currentWorkPercent]="currentWorkPercent()"
+    </div> -->
+    <!-- <app-status-info [hidden]="isSettingsOpened" [poseScore]="pose?.score" [currentWorkPercent]="currentWorkPercent()"
         [currentExtraWorkTimeCounter]="currentExtraWorkTimeCounter" [isOnAir]="isOnAir">
-    </app-status-info>
-    <app-settings [hidden]="!isSettingsOpened" [workTimeNorm]="workTimeNorm" [restTimeNorm]="restTimeNorm"
+    </app-status-info> -->
+    <!-- <app-settings [hidden]="!isSettingsOpened" [workTimeNorm]="workTimeNorm" [restTimeNorm]="restTimeNorm"
+        [currentWorkTime]="currentWorkTimeCounter" [currentExtraWorkTime]="currentExtraWorkTimeCounter"
+        (settingsUpdate)="onSettingsUpdate($event)">
+    </app-settings> -->
+    <app-settings [poseScore]="pose?.score" [workTimeNorm]="workTimeNorm" [restTimeNorm]="restTimeNorm"
         [currentWorkTime]="currentWorkTimeCounter" [currentExtraWorkTime]="currentExtraWorkTimeCounter"
         (settingsUpdate)="onSettingsUpdate($event)">
     </app-settings>

@@ -15,6 +15,7 @@ export class SettingsComponent implements OnInit, OnChanges {
     });
     isCurrentWorkInFocus: boolean;
     isCurrentExtraInFocus: boolean;
+    @Input() poseScore = 0;
     @Input() workTimeNorm: number;
     @Input() restTimeNorm: number;
     @Input() currentWorkTime: number;
@@ -54,7 +55,12 @@ export class SettingsComponent implements OnInit, OnChanges {
         this.settingsUpdate.emit(this.form);
     }
     onReset(): void {
-        this.form.patchValue({ workTimeNorm: 50, restTimeNorm: 10 });
+        this.form.patchValue({
+            // workTimeNorm: 50,
+            // restTimeNorm: 10,
+            currentWorkTime: 0,
+            currentExtraWorkTime: 0,
+        });
         this.onSubmit();
     }
 

@@ -131,6 +131,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }
         if (decreasedCounter < 0) {
             this.currentExtraWorkTimeCounter = this.currentExtraWorkTimeCounter - (this.detectionRate * this.workToRestRatio);
+            console.log('dec ', this.detectionRate, this.workToRestRatio);
         }
         return decreasedCounter > 0 ? decreasedCounter : 0;
     }
