@@ -61,6 +61,7 @@
         text-transform: uppercase;
         margin: 6px 0 4px;
         height: 27px;
+        cursor: default;
         &_loading{
             color: $gray;
         }
