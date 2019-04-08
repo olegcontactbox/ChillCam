@@ -19,7 +19,6 @@ import { WebviewDirective } from './directives/webview.directive';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { StatusBarComponent } from './components/home/status-bar/status-bar.component';
-// import { StatusInfoComponent } from './components/home/status-info/status-info.component';
 import { SettingsComponent } from './components/home/settings/settings.component';
 
 // AoT requires an exported function for factories
@@ -33,7 +32,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent,
     WebviewDirective,
     StatusBarComponent,
-    // StatusInfoComponent,
     SettingsComponent
   ],
   imports: [

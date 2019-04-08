@@ -114,11 +114,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     incCounter(): number {
+        // console.log('incCounter()', this.currentExtraWorkTimeCounter);
         const increasedCounter = this.currentWorkTimeCounter + this.detectionRate;
-        if (increasedCounter > this.workTimeNorm) { this.currentExtraWorkTimeCounter += this.detectionRate; }
-        if (increasedCounter > this.workTimeNorm && !this.notification) {
-            this.notify();
-            this.notification = setInterval(this.notify, this.notificationIntervalTime);
+        if (increasedCounter > this.workTimeNorm) {
+            this.currentExtraWorkTimeCounter += this.detectionRate / 5;
+            if (!this.notification) {
+                this.notify();
+                this.notification = setInterval(this.notify, this.notificationIntervalTime);
+            }
         }
         return increasedCounter > this.workTimeNorm ? this.workTimeNorm : increasedCounter;
     }
@@ -131,7 +134,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }
         if (decreasedCounter < 0) {
             this.currentExtraWorkTimeCounter = this.currentExtraWorkTimeCounter - (this.detectionRate * this.workToRestRatio);
-            console.log('dec ', this.detectionRate, this.workToRestRatio);
+            // console.log('dec ', this.detectionRate, this.workToRestRatio);
         }
         return decreasedCounter > 0 ? decreasedCounter : 0;
     }
