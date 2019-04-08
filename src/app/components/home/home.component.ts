@@ -168,14 +168,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
         // this.currentWorkTimeCounter = this.currentWorkTimeCounter === Math.floor(settings.value.currentWorkTime) ?
         // this.currentWorkTimeCounter : settings.value.currentWorkTime * 60000;
 
-        if (Math.floor(this.currentWorkTimeCounter / 60000) !== settings.value.currentWorkTime) {
+        // if (Math.floor(this.currentWorkTimeCounter / 60000) !== settings.value.currentWorkTime) { // ???
             this.currentWorkTimeCounter = settings.value.currentWorkTime * 60000;
-        }
-        if (Math.floor(this.currentExtraWorkTimeCounter / 60000) !== settings.value.currentExtraWorkTime) {
-            // this.currentWorkTimeCounter = settings.value.currentWorkTime;
+        // }
+        // if (Math.floor(this.currentExtraWorkTimeCounter / 60000) !== settings.value.currentExtraWorkTime) { // ???
             this.currentExtraWorkTimeCounter = settings.value.currentExtraWorkTime * 60000;
 
-        }
+        // }
         // this.currentExtraWorkTimeCounter = settings.value.currentExtraWorkTime * 60000;
 
         localStorage.setItem('workTimeNorm', `${this.workTimeNorm}`);
