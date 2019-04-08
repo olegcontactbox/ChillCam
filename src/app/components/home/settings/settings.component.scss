@@ -6,8 +6,9 @@
 // }
 
 .settings {
-    border-radius: 18px;
-    background: $blue;
+    // border-radius: 18px;
+    // background: $blue;
+    // background: $primary-color-dark;
     width: 320px;
     height: 150px;
     display: flex;
@@ -43,7 +44,8 @@
         &__info-icon {
             position: absolute;
             text-align: center;
-            background: $blue2;
+            // background: $blue2;
+            background: #636363;
             width: 18px;
             height: 18px;
             border-radius: 9px;
@@ -63,14 +65,17 @@
         height: 27px;
         cursor: default;
         &_loading{
-            color: $gray;
+            // color: $gray;
+            color: #1a1c2c;
         }
         &_detected {
-            color: $green;
+            // color: $green;
+            color: #1a1c2c;
         }
 
         &_no-detection {
-            color: $red;
+            // color: $red;
+            color: #1a1c2c;
         }
     }
 
@@ -102,7 +107,8 @@
                     // padding-left: 8px;
                     & span {
                         font-size: 18px;
-                        color: $white;
+                        // color: $white;
+                        color: $primary-text-color;
                         // margin: 0 6px;
 
                         // margin-left: 8px;
@@ -113,7 +119,7 @@
                         margin-top: 1px;
                         width: 40px;
                         height: 20px;
-                        border-radius: 4px;
+                        // border-radius: 4px;
                         text-align: center;
                         outline: none;
                         border: none;
@@ -133,21 +139,24 @@
             display: flex;
 
             & button {
-                width: 110px;
-                height: 30px;
+                width: 150px;
+                height: 32px;
                 border: none;
-                background: $green;
-                border-radius: 4px;
+                // background: $green;
+                // background: $accent-color;
+                // border-radius: 4px;
                 margin: 0 10px;
                 color: $black;
                 transition: all .2s ease-in-out;
                 outline: none;
 
                 &:hover {
-                    // transform: scale(1.1);
-                    // background: $white;
+                    // transform: scaleY(1.1);
+                    // background: darkgrey;
+                    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+                    // color: $white;
                     // transform: rotate(360deg);
-                    transform: translateY(-2px);
+                    // transform: translateY(-2px);
 
                 }
             }
