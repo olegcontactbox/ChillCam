@@ -1,5 +1,10 @@
 @import "~styles/colors";
 
+// @keyframes pulsate {
+//     0% {opacity: 1;}
+//     100% {opacity: 0;}
+// }
+
 .settings {
     border-radius: 18px;
     background: $blue;
@@ -14,12 +19,28 @@
     //     margin: 8px 0;
     //     color: $green;
     // }
-    & .info-icon {
+    & .icons {
         position: relative;
         display: flex;
         width: 100%;
-        
-        & p {
+        // &__check-eye {
+        //     position: absolute;
+        //     top: 10px;
+        //     left: 20px;
+        //     width: 18px;
+        //     height: 18px;
+        //     padding: 1px 2px;
+        //     background: $blue2;
+        //     color: $white;
+        //     border-radius: 50%;
+        //     opacity: 1;
+        //     & svg.fade-in {
+        //         // animation: pulsate 10s linear ;
+        //         // animation-iteration-count: 1;
+        //     }
+        // }
+
+        &__info-icon {
             position: absolute;
             text-align: center;
             background: $blue2;
