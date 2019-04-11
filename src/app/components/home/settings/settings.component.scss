@@ -84,6 +84,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        color: $primary-text-color;
+        font-size: 18px;
 
         & .inputs {
             display: flex;
@@ -105,14 +107,12 @@
                         margin-right: 20px;
                     }
                     // padding-left: 8px;
-                    & span {
-                        font-size: 18px;
+                    // & span {
                         // color: $white;
-                        color: $primary-text-color;
                         // margin: 0 6px;
 
                         // margin-left: 8px;
-                    }
+                    // }
 
                     & input {
                         margin-left: auto;
@@ -125,6 +125,16 @@
                         border: none;
                     }
                 }
+            }
+        }
+
+        & .checkbox {
+            width: 280px;
+            display: flex;
+            justify-content: center;
+            margin: 8px 0 16px;
+            & input {
+                margin-left: 12px;
             }
         }
 

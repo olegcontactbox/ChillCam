@@ -1,6 +1,11 @@
-import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges, ViewChild } from '@angular/core';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 const { shell } = require('electron');
+const app = require('electron').remote.app;
+
+// const { app } = require('electron');
+// const electron = require('electron');
+// import { app } from 'electron';
 
 
 @Component({
@@ -17,12 +22,14 @@ export class SettingsComponent implements OnInit, OnChanges {
     });
     isCurrentWorkInFocus: boolean;
     isCurrentExtraInFocus: boolean;
+    isAutorun: boolean;
     @Input() poseScore = 0;
     @Input() workTimeNorm: number;
     @Input() restTimeNorm: number;
     @Input() currentWorkTime: number;
     @Input() currentExtraWorkTime: number;
     @Output() settingsUpdate = new EventEmitter<FormGroup>();
+
     constructor(private formBuilder: FormBuilder) { }
 
     ngOnInit() {
@@ -36,6 +43,11 @@ export class SettingsComponent implements OnInit, OnChanges {
         //     'workTimeNorm': new FormControl(0, [Validators.required]),
         //     'restTimeNorm': new FormControl(0, [Validators.required]),
         // });
+
+        const loginSettings = app.getLoginItemSettings();
+        this.isAutorun = loginSettings.openAtLogin;
+
+        console.log(event, loginSettings);
     }
     ngOnChanges(): void {
         this.form.patchValue({
@@ -67,6 +79,25 @@ export class SettingsComponent implements OnInit, OnChanges {
     }
     onInfoClick(): void {
         shell.openExternal('https://github.com/olegcontactbox/chillometer/blob/master/README.md');
+    }
+    onCheckboxClick(event: boolean): void {
+
+        // const app = require('electron').remote.app;
+        // const remote = require('electron').remote;
+        // const app = remote.app;
+
+        // const { app } = require('electron');
+        // const electron = require('electron');
+        // app.getLoginItemSettings();
+        // const info = app.getLoginItemSettings();
+        // console.log(event, info);
+        // console.log(event, info);
+        // console.log('clk', event);
+        app.setLoginItemSettings({
+            openAtLogin: event,
+            // path: electron.app.getPath('exe')
+        });
+        this.isAutorun = event;
     }
 
 }

@@ -46,6 +46,12 @@
                 </label>
             </div>
         </div>
+        <div class="checkbox">
+            <label>
+                <span>Autorun</span>
+                <input type="checkbox" #checkbox [checked]="isAutorun === true" (click)="onCheckboxClick(checkbox.checked)">
+            </label> 
+        </div>
         <!-- <div class="divider"></div> -->
         <div class="buttons">
 
