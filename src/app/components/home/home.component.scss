@@ -8,11 +8,13 @@
     align-items: center;
     padding: 16px 16px 0;
     // background-color: white;
-    // & video {
+    & video {
         // border: 2px solid $divider-color;
+        border: 1px solid #cacaca;
+        background: #dadada;
         // border-radius: 18px;
         // background: $blue;
-    // }
+    }
     & .settings-button-container {
         position: relative;
         width: 100%;
@@ -27,6 +29,6 @@
         }
     }
     & app-status-bar {
-        margin: 8px 0 0;
+        margin: 12px 0 0;
     }
 }

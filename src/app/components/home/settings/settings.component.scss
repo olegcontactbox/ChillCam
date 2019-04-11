@@ -45,7 +45,8 @@
             position: absolute;
             text-align: center;
             // background: $blue2;
-            background: #636363;
+            // background: #636363;
+            background: #607D8B;
             width: 18px;
             height: 18px;
             border-radius: 9px;
@@ -61,7 +62,7 @@
     & .detection-status {
         font-size: 22px;
         text-transform: uppercase;
-        margin: 6px 0 4px;
+        margin: 8px 0 8px;
         height: 27px;
         cursor: default;
         &_loading{
@@ -131,8 +132,9 @@
         & .checkbox {
             width: 280px;
             display: flex;
-            justify-content: center;
-            margin: 8px 0 16px;
+            // justify-content: center;
+            justify-content: flex-end;
+            margin: 4px 0 16px;
             & input {
                 margin-left: 12px;
             }
@@ -147,7 +149,8 @@
 
         & .buttons {
             display: flex;
-
+            justify-content: space-between;
+            width: 320px;
             & button {
                 width: 150px;
                 height: 32px;
@@ -155,11 +158,13 @@
                 // background: $green;
                 // background: $accent-color;
                 // border-radius: 4px;
-                margin: 0 10px;
+                // margin: 0 10px;
                 color: $black;
                 transition: all .2s ease-in-out;
                 outline: none;
-
+                // &:first-of-type {
+                    // margin-right: 10px;
+                // }
                 &:hover {
                     // transform: scaleY(1.1);
                     // background: darkgrey;
