@@ -139,7 +139,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         return decreasedCounter > 0 ? decreasedCounter : 0;
     }
 
-    currentWorkPercent(): number {
+    get currentWorkPercent(): number {
         return this.currentWorkTimeCounter / (this.workTimeNorm / 100);
     }
 
