@@ -81,21 +81,8 @@ export class SettingsComponent implements OnInit, OnChanges {
         shell.openExternal('https://github.com/olegcontactbox/chillometer/blob/master/README.md');
     }
     onCheckboxClick(event: boolean): void {
-
-        // const app = require('electron').remote.app;
-        // const remote = require('electron').remote;
-        // const app = remote.app;
-
-        // const { app } = require('electron');
-        // const electron = require('electron');
-        // app.getLoginItemSettings();
-        // const info = app.getLoginItemSettings();
-        // console.log(event, info);
-        // console.log(event, info);
-        // console.log('clk', event);
         app.setLoginItemSettings({
             openAtLogin: event,
-            // path: electron.app.getPath('exe')
         });
         this.isAutorun = event;
     }

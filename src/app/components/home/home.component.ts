@@ -165,19 +165,27 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.workTimeNorm = settings.value.workTimeNorm * 60000;
         this.restTimeNorm = settings.value.restTimeNorm * 60000;
 
+        localStorage.setItem('workTimeNorm', `${this.workTimeNorm}`);
+        localStorage.setItem('restTimeNorm', `${this.restTimeNorm}`);
+
         // this.currentWorkTimeCounter = this.currentWorkTimeCounter === Math.floor(settings.value.currentWorkTime) ?
         // this.currentWorkTimeCounter : settings.value.currentWorkTime * 60000;
 
-        // if (Math.floor(this.currentWorkTimeCounter / 60000) !== settings.value.currentWorkTime) { // ???
-            this.currentWorkTimeCounter = settings.value.currentWorkTime * 60000;
-        // }
-        // if (Math.floor(this.currentExtraWorkTimeCounter / 60000) !== settings.value.currentExtraWorkTime) { // ???
-            this.currentExtraWorkTimeCounter = settings.value.currentExtraWorkTime * 60000;
+        if (!settings.value.currentWorkTime && !settings.value.currentExtraWorkTime) {
+            this.currentWorkTimeCounter = 0;
+            this.currentExtraWorkTimeCounter = 0;
+            return;
+        }
 
-        // }
+        if (Math.floor(this.currentWorkTimeCounter / 60000) !== settings.value.currentWorkTime) { // ???
+            this.currentWorkTimeCounter = settings.value.currentWorkTime * 60000;
+        }
+
+        if (Math.floor(this.currentExtraWorkTimeCounter / 60000) !== settings.value.currentExtraWorkTime) { // ???
+            this.currentExtraWorkTimeCounter = settings.value.currentExtraWorkTime * 60000;
+        }
+
         // this.currentExtraWorkTimeCounter = settings.value.currentExtraWorkTime * 60000;
 
-        localStorage.setItem('workTimeNorm', `${this.workTimeNorm}`);
-        localStorage.setItem('restTimeNorm', `${this.restTimeNorm}`);
     }
 }
