@@ -9,18 +9,36 @@ serve = args.some(val => val === '--serve');
 function createWindow() {
 
   const electronScreen = screen;
-  const size = electronScreen.getPrimaryDisplay().workAreaSize;
+  const displaySize = electronScreen.getPrimaryDisplay().workAreaSize;
+  const size = {
+        width: 372,
+        height: 538,
+      //   width: 376,
+    //   height: 519,
+    //   width: 360,
+    //   height: 480,
+  };
 
   // Create the browser window.
   win = new BrowserWindow({
     x: 0,
     y: 0,
+    // width: serve ? displaySize.width : size.width,
+    // height: serve ? displaySize.height : size.height,
     width: size.width,
     height: size.height,
+    resizable: serve ? true : false,
+    // resizable: false,
+    // frame: serve ? true : false,
     webPreferences: {
       nodeIntegration: true,
     },
   });
+
+  if (!serve) {
+    // win.setResizable(false);
+    win.center();
+  }
 
   if (serve) {
     require('electron-reload')(__dirname, {
@@ -36,7 +54,7 @@ function createWindow() {
   }
 
 //   if (serve) {
-    win.webContents.openDevTools();
+    // win.webContents.openDevTools();
 //   }
 
   // Emitted when the window is closed.
