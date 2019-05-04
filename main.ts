@@ -30,10 +30,13 @@ function createWindow() {
     resizable: serve ? true : false,
     // resizable: false,
     // frame: serve ? true : false,
+    // icon: __dirname + '/icon.png',
     webPreferences: {
       nodeIntegration: true,
     },
   });
+
+//   win.setIcon(path.join(__dirname, 'icon.png'));
 
   if (!serve) {
     // win.setResizable(false);

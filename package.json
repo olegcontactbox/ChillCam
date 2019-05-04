@@ -1,7 +1,7 @@
 {
-    "name": "chillometer",
+    "name": "chillcam",
     "version": "0.1.0",
-    "description": "chillometer displays a notification when you sit in fron of your monitor for too long. webcam required",
+    "description": "chillcam displays a notification when you sit in front of your monitor for too long. webcam required",
     "homepage": "https://github.com/olegcontactbox",
     "author": {
         "name": "oleg",
@@ -42,7 +42,7 @@
         "test": "npm run postinstall:web && ng test",
         "e2e": "npm run build:prod && mocha --timeout 300000 --require ts-node/register e2e/**/*.spec.ts",
         "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
-        "packager": "electron-packager . chillometer --out=./release"
+        "packager": "electron-packager . ChillCam --out=./release --icon=./icon.ico --overwrite"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "0.12.1",
