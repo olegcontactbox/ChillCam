@@ -23,10 +23,10 @@ function createWindow() {
   win = new BrowserWindow({
     x: 0,
     y: 0,
-    // width: serve ? displaySize.width : size.width,
-    // height: serve ? displaySize.height : size.height,
-    width: size.width,
-    height: size.height,
+    width: serve ? displaySize.width : size.width,
+    height: serve ? displaySize.height : size.height,
+    // width: size.width,
+    // height: size.height,
     resizable: serve ? true : false,
     // resizable: false,
     // frame: serve ? true : false,
@@ -56,9 +56,9 @@ function createWindow() {
     }));
   }
 
-//   if (serve) {
-    // win.webContents.openDevTools();
-//   }
+  if (serve) {
+    win.webContents.openDevTools();
+  }
 
   // Emitted when the window is closed.
   win.on('closed', () => {

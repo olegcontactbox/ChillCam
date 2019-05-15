@@ -40,12 +40,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
     startTime: number;
 
     notification: NodeJS.Timer;
-    notificationIntervalTime = 300000;
+    notificationIntervalTime = 300000; // 5 minutes
     // notificationTimeout = 5; // in seconds
 
-    isOnAir = false;
+    // isOnAir = false;
 
     isSettingsOpened = false;
+
+    isCamConnected = false;
+
+
 
 
 
@@ -57,14 +61,26 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
+        this.getUserMedia();
+    }
+
+    getUserMedia(): void {
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
-                // this.video.nativeElement.src = window.URL.createObjectURL(stream); //depricated
-                this.video.nativeElement.srcObject = stream;
-                this.video.nativeElement.play().then(() => {
-                    this.getPose();
-                });
-            });
+
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(
+                    stream => {
+                        this.isCamConnected = true;
+                        this.video.nativeElement.srcObject = stream;
+                        this.video.nativeElement.play().then(() => {
+                            this.getPose();
+                        });
+                    },
+                    error => {
+                        this.isCamConnected = false;
+                        console.log(error);
+                    }
+                );
         }
     }
 
@@ -93,7 +109,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 .then(pose => {
                     this.pose = pose;
                     this.doCount();
-                    this.isOnAir = true;
+                    // this.isOnAir = true;
                     console.log(pose);
                 });
         };
@@ -134,7 +150,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }
         if (decreasedCounter < 0) {
             this.currentExtraWorkTimeCounter = this.currentExtraWorkTimeCounter - (this.detectionRate * this.workToRestRatio);
-            // console.log('dec ', this.detectionRate, this.workToRestRatio);
         }
         return decreasedCounter > 0 ? decreasedCounter : 0;
     }

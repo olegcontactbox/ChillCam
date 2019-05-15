@@ -47,7 +47,7 @@ export class SettingsComponent implements OnInit, OnChanges {
         const loginSettings = app.getLoginItemSettings();
         this.isAutorun = loginSettings.openAtLogin;
 
-        console.log(event, loginSettings);
+        console.log(loginSettings);
     }
     ngOnChanges(): void {
         this.form.patchValue({

@@ -1,7 +1,10 @@
 <div class="page-container">
 
     <!-- <div class="video-container"> -->
-    <video #video id="video" width="320" height="240" autoplay></video>
+        <video #video id="video" width="320" height="240" autoplay></video>
+    <!-- <div class="button-container"> -->
+    <button *ngIf="!isCamConnected" (click)="getUserMedia()">Connect your camera and click here</button>
+    <!-- </div> -->
     <!-- </div> -->
     <!-- <canvas #canvas id="canvas" width="320" height="240"></canvas> -->
     <app-status-bar [currentWorkPercent]="currentWorkPercent" (click)="notify()"></app-status-bar>
