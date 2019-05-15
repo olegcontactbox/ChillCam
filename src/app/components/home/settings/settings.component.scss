@@ -58,17 +58,64 @@
             color: $white;
             font-style: italic;
         }
+
+        &__update-icon {
+            @keyframes countdown {
+                from {
+                  stroke-dashoffset: 0px;
+                  opacity: 0;
+                }
+                to {
+                  stroke-dashoffset: 57px;
+                  opacity: 1;
+                }
+              }
+
+            & svg {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                // width: 40px;
+                width: 18px;
+                // height: 40px;
+                height: 18px;
+                transform: rotateY(-180deg) rotateZ(-90deg);
+
+                & circle {
+                    stroke-dasharray: 57px;
+                    stroke-dashoffset: 0px;
+                    stroke-linecap: round;
+                    stroke-width: 2px;
+                    // stroke: $black;
+                    stroke: $gray;
+                    fill: none;
+                    // animation: countdown 11.9s linear infinite forwards;
+                    animation: countdown 11.9s linear 1 forwards;
+
+                }
+
+            }
+
+            // .animation {
+            // animation: countdown 12s linear 1 forwards;
+            // }
+
+
+        }
     }
+
     & .detection-status {
         font-size: 22px;
         text-transform: uppercase;
         margin: 8px 0 8px;
         height: 27px;
         cursor: default;
-        &_loading{
+
+        &_loading {
             // color: $gray;
             color: #1a1c2c;
         }
+
         &_detected {
             // color: $green;
             color: #1a1c2c;
@@ -104,15 +151,17 @@
 
                     display: flex;
                     width: 50%;
+
                     &:first-of-type {
                         margin-right: 20px;
                     }
+
                     // padding-left: 8px;
                     // & span {
-                        // color: $white;
-                        // margin: 0 6px;
+                    // color: $white;
+                    // margin: 0 6px;
 
-                        // margin-left: 8px;
+                    // margin-left: 8px;
                     // }
 
                     & input {
@@ -135,6 +184,7 @@
             justify-content: center;
             // justify-content: flex-end;
             margin: 4px 0 16px;
+
             & input {
                 margin-left: 12px;
             }
@@ -151,6 +201,7 @@
             display: flex;
             justify-content: space-between;
             width: 320px;
+
             & button {
                 width: 150px;
                 height: 32px;
@@ -162,8 +213,9 @@
                 color: $black;
                 // transition: all .2s ease-in-out;
                 outline: none;
+
                 // &:first-of-type {
-                    // margin-right: 10px;
+                // margin-right: 10px;
                 // }
                 &:hover {
                     // transform: scaleY(1.1);

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input, OnChanges, ViewChild } from '@angular/core';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
+import { of } from 'rxjs';
 const { shell } = require('electron');
 const app = require('electron').remote.app;
 
@@ -23,6 +24,8 @@ export class SettingsComponent implements OnInit, OnChanges {
     isCurrentWorkInFocus: boolean;
     isCurrentExtraInFocus: boolean;
     isAutorun: boolean;
+    isAnimateTimer: boolean;
+
     @Input() poseScore = 0;
     @Input() workTimeNorm: number;
     @Input() restTimeNorm: number;
@@ -49,7 +52,7 @@ export class SettingsComponent implements OnInit, OnChanges {
 
         console.log(loginSettings);
     }
-    ngOnChanges(): void {
+    ngOnChanges(changes): void {
         this.form.patchValue({
             workTimeNorm: this.workTimeNorm / 60000,
             restTimeNorm: this.restTimeNorm / 60000,
@@ -64,6 +67,16 @@ export class SettingsComponent implements OnInit, OnChanges {
                 currentExtraWorkTime: Math.floor(this.currentExtraWorkTime / 60000),
             });
         }
+        console.log(changes);
+
+        if (!changes.poseScore || !this.poseScore) { return; }
+        this.isAnimateTimer = false;
+        setTimeout(() => {
+            this.isAnimateTimer = true;
+        }, 100);
+        console.log(`pose`, this.poseScore);
+
+
     }
     onSubmit(): void {
         this.settingsUpdate.emit(this.form);
