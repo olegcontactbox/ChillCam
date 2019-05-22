@@ -42,15 +42,9 @@ export class SettingsComponent implements OnInit, OnChanges {
             currentWorkTime: this.currentWorkTime / 60000,
             currentExtraWorkTime: this.currentExtraWorkTime / 60000,
         });
-        // this.form = this.formBuilder.group({
-        //     'workTimeNorm': new FormControl(0, [Validators.required]),
-        //     'restTimeNorm': new FormControl(0, [Validators.required]),
-        // });
 
         const loginSettings = app.getLoginItemSettings();
         this.isAutorun = loginSettings.openAtLogin;
-
-        console.log(loginSettings);
     }
     ngOnChanges(changes): void {
         this.form.patchValue({
@@ -67,24 +61,17 @@ export class SettingsComponent implements OnInit, OnChanges {
                 currentExtraWorkTime: Math.floor(this.currentExtraWorkTime / 60000),
             });
         }
-        console.log(changes);
-
         if (!changes.poseScore || !this.poseScore) { return; }
         this.isAnimateTimer = false;
         setTimeout(() => {
             this.isAnimateTimer = true;
         }, 100);
-        console.log(`pose`, this.poseScore);
-
-
     }
     onSubmit(): void {
         this.settingsUpdate.emit(this.form);
     }
     onReset(): void {
         this.form.patchValue({
-            // workTimeNorm: 50,
-            // restTimeNorm: 10,
             currentWorkTime: 0,
             currentExtraWorkTime: 0,
         });

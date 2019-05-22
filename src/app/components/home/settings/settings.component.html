@@ -1,22 +1,15 @@
 <div class="settings">
-    <!-- <h2 class="header">Settings</h2> -->
     <div class="icons">
         <p class="icons__info-icon" (click)="onInfoClick()">i</p>
         <div *ngIf="isAnimateTimer" class="icons__update-icon">
             <svg>
-                <!-- <circle r="9" cx="10" cy="10"></circle> -->
                 <circle r="8.1" cx="9" cy="9"></circle>
             </svg>
         </div>
     </div>
     <h2 *ngIf="!poseScore" class="detection-status detection-status_loading">Loading...</h2>
-    <h2 *ngIf="poseScore"
-        class="detection-status {{poseScore && poseScore > 0.1 ? 'detection-status_detected' : 'detection-status_no-detection'}}">
-        {{
-                poseScore && poseScore > 0.1 ?
-                    'User detected' :
-                    'No user detected' 
-            }}
+    <h2 *ngIf="poseScore" class="detection-status">
+        {{ (poseScore && poseScore > 0.1) ? 'User detected' : 'No user detected' }}
     </h2>
     <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="inputs">
@@ -50,9 +43,7 @@
                     (click)="onCheckboxClick(checkbox.checked)">
             </label>
         </div>
-        <!-- <div class="divider"></div> -->
         <div class="buttons">
-
             <button type="submit">Apply</button>
             <button type="button" (click)="onReset()">Reset</button>
         </div>

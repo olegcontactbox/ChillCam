@@ -18,14 +18,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     @ViewChild('video')
     public video: ElementRef;
-    // @ViewChild('canvas')
-    // public canvas: ElementRef;
 
     pose: posenet.Pose;
-
-    // detectionRate = 6000; // TEST !!! MUST BE 6000
-    // restTimeNorm = 12000; // 10 minutes = 600000
-    // workTimeNorm = 18000; // 50 minutes = 3000000
 
     detectionRate = 12000; // TEST !!! MUST BE 6000
     restTimeNorm = 600000; // 10 minutes = 600000

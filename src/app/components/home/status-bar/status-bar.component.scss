@@ -2,25 +2,16 @@
 
 
 .status-bar {
-    // background-color: $red;
-    // background-color: $red;
     height: 32px;
-    // border-radius: 18px;
     overflow: hidden;
-    // border: 2px solid $blue;
     border: 1px solid #cacaca;
-    // box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     position: relative;
 
     & .mark {
-        // background-color: $green;
-        // background-color: $accent-color;
-        // background-color: #cecece;
         background-color: #dadada;
         height: 32px;
-        // border-radius: 18px;
-        
     }
+
     & .percent {
         font-weight: bolder;
         position: absolute;
@@ -28,10 +19,9 @@
         top: -21px;
         width: 100%;
         text-align: center;
-        // color: $white;
         font-size: 24px;
+
         &-icon {
-            // display: inline;
             position: absolute;
         }
     }
