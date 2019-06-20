@@ -18,13 +18,13 @@ IMPORTANT!
 SETTINGS EXPLANATION (4 MAIN APP PARAMETERS)
 
 WORK TIME:
-  Amount of time that you planned to spend in front of your monitor.
-CHILL TIME: 
-  Break time amount.
+Amount of time that you planned to spend in front of your monitor.
+CHILL TIME:
+Break time amount.
 CURRENT:
-  Displays the time that you already spent working. It can't be more than WORK TIME.
+Displays the time that you already spent working. It can't be more than WORK TIME.
 EXTRA CHILL:
-  It can be positive (if you work more than your WORK TIME) or negative (if you work less than it).
+It can be positive (if you work more than your WORK TIME) or negative (if you work less than it).
 
 
 FIRST RUN
