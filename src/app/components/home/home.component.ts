@@ -37,15 +37,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     notificationIntervalTime = 300000; // 5 minutes
     // notificationTimeout = 5; // in seconds
 
-    // isOnAir = false;
 
     isSettingsOpened = false;
 
     isCamConnected = false;
 
-
-
-
+    isPosenetLoaded = false;
 
     constructor() { }
 
@@ -94,16 +91,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
         const flipHorizontal = false;
         const outputStride = 16;
 
-        // const multiplier = 0.75; // default argument for load
         // load the posenet model
         const net = await posenet.load();
+
+        this.isPosenetLoaded = true;
 
         const detection = () => {
             net.estimateSinglePose(this.video.nativeElement, scaleFactor, flipHorizontal, outputStride)
                 .then(pose => {
                     this.pose = pose;
                     this.doCount();
-                    // this.isOnAir = true;
                     console.log(pose);
                 });
         };
@@ -124,7 +121,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     incCounter(): number {
-        // console.log('incCounter()', this.currentExtraWorkTimeCounter);
         const increasedCounter = this.currentWorkTimeCounter + this.detectionRate;
         if (increasedCounter > this.workTimeNorm) {
             this.currentExtraWorkTimeCounter += this.detectionRate / 5;

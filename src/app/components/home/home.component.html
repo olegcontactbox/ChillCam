@@ -1,6 +1,7 @@
 <div class="page-container">
     <video #video id="video" width="320" height="240" autoplay></video>
     <button *ngIf="!isCamConnected" (click)="getUserMedia()">Connect your camera and click here</button>
+    <button *ngIf="isCamConnected && !isPosenetLoaded" >Model loading...</button>
     <app-status-bar [currentWorkPercent]="currentWorkPercent" (click)="notify()"></app-status-bar>
     <app-settings [poseScore]="pose?.score" [workTimeNorm]="workTimeNorm" [restTimeNorm]="restTimeNorm"
         [currentWorkTime]="currentWorkTimeCounter" [currentExtraWorkTime]="currentExtraWorkTimeCounter"
