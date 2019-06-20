@@ -8,7 +8,7 @@ ChillCam can help you to control the time you spend in front of the monitor.
 INTERNET CONNECTION IS NOT REQUIRED!
 
 For now, you can DOWNLOAD it only for WINDOWS 10 from Google Drive:
-  https://drive.google.com/file/d/1W627jhoDjoiwL38GY__C0loqIh-rtki2/view?usp=sharing
+  https://drive.google.com/open?id=1mc36syQcRLef7TcziumqAnqY63Kmcl7p
 
 IMPORTANT!
   To have notifications you should pin app to taskbar (click right mouse button on icon and choose this option in menu)!
