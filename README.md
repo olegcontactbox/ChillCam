@@ -17,7 +17,7 @@ IMPORTANT!
 
 SETTINGS EXPLANATION (4 MAIN APP PARAMETERS)
 
-WORK TIME: 
+WORK TIME:
   Amount of time that you planned to spend in front of your monitor.
 CHILL TIME: 
   Break time amount.
