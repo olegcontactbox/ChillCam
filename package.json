@@ -1,6 +1,6 @@
 {
     "name": "chillcam",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "description": "chillcam app displays a notification when you sit in front of your monitor for too long. webcam required",
     "homepage": "https://github.com/olegcontactbox",
     "author": {
@@ -86,8 +86,9 @@
         "typescript": "3.2.4",
         "wait-on": "3.2.0",
         "webdriver-manager": "12.1.0",
+        "zone.js": "0.8.29",
         "@tensorflow-models/posenet": "^0.2.3",
-        "zone.js": "0.8.29"
+        "node-notifier": "^5.4.0"
     },
     "dependencies": {
         "@tensorflow-models/posenet": "^0.2.3",

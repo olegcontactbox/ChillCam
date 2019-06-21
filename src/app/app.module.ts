@@ -17,9 +17,9 @@ import { ElectronService } from './providers/electron.service';
 import { WebviewDirective } from './directives/webview.directive';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { StatusBarComponent } from './components/home/status-bar/status-bar.component';
-import { SettingsComponent } from './components/home/settings/settings.component';
+import { MainComponent } from './components/main/main.component';
+import { StatusBarComponent } from './components/main/status-bar/status-bar.component';
+import { SettingsComponent } from './components/main/settings/settings.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -29,7 +29,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    MainComponent,
     StatusBarComponent,
     SettingsComponent,
     WebviewDirective,
