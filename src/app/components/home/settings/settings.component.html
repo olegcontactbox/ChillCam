@@ -1,36 +1,36 @@
 <div class="settings">
     <div class="icons">
-        <p class="icons__info-icon" (click)="onInfoClick()">i</p>
-        <div *ngIf="isAnimateTimer" class="icons__update-icon">
+        <p class="icons__info-icon" (click)="onInfoClick()" title="More info">i</p>
+        <div class="icons__update-icon" *ngIf="isAnimateTimer" title="Webcam is checked every 12 seconds" >
             <svg>
                 <circle r="8.1" cx="9" cy="9"></circle>
             </svg>
         </div>
     </div>
     <h2 *ngIf="!poseScore" class="detection-status detection-status_loading">Loading...</h2>
-    <h2 *ngIf="poseScore" class="detection-status">
+    <h2 *ngIf="poseScore" class="detection-status" title="Current detection status">
         {{ (poseScore && poseScore > 0.1) ? 'User detected' : 'No user detected' }}
     </h2>
     <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="inputs">
             <div class="inputs__row">
                 <label>
-                    <span>Work time</span>
+                    <span title="Time you planned for work. All values in minutes">Work time</span>
                     <input type="number" formControlName="workTimeNorm">
                 </label>
                 <label>
-                    <span>Chill time</span>
+                    <span title="Rest time. Interval between work cycles">Chill time</span>
                     <input type="number" formControlName="restTimeNorm">
                 </label>
             </div>
             <div class="inputs__row">
                 <label>
-                    <span>Current</span>
+                    <span title="Time that you already spent in front of your monitor in current work cycle">Current</span>
                     <input type="number" formControlName="currentWorkTime" (focus)="isCurrentWorkInFocus = true"
                         (blur)="isCurrentWorkInFocus = false">
                 </label>
                 <label>
-                    <span>Extra chill</span>
+                    <span title="Counter displays how much you work above work plan">Extra chill</span>
                     <input type="number" formControlName="currentExtraWorkTime" (focus)="isCurrentExtraInFocus = true"
                         (blur)="isCurrentExtraInFocus = false">
                 </label>

@@ -30,9 +30,9 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     HomeComponent,
-    WebviewDirective,
     StatusBarComponent,
-    SettingsComponent
+    SettingsComponent,
+    WebviewDirective,
   ],
   imports: [
     BrowserModule,
